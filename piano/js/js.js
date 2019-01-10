@@ -26,6 +26,9 @@ const urls = {
 
 
 const piano = document.getElementsByClassName('set')[0];
+console.log(piano);
+const pianoArr = Array.from(piano);
+console.log(pianoArr);
 const buttons = piano.getElementsByTagName('li');
 
 function playSound(event) {
@@ -34,10 +37,16 @@ function playSound(event) {
 
   if (event.shiftKey) {
     audio.src = urls.lower[tone];
+    piano.classList.remove('higher', 'middle');
+    piano.classList.add('lower');
   } else if (event.altKey) {
     audio.src = urls.higher[tone];
+    piano.classList.remove('lower', 'middle');
+    piano.classList.add('higher');
   } else {
     audio.src = urls.middle[tone];
+    piano.classList.remove('higher', 'lower');
+    piano.classList.add('middle');
   }
 
   audio.play();
