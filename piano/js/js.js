@@ -26,9 +26,6 @@ const urls = {
 
 
 const piano = document.getElementsByClassName('set')[0];
-console.log(piano);
-const pianoArr = Array.from(piano);
-console.log(pianoArr);
 const buttons = piano.getElementsByTagName('li');
 
 function playSound(event) {
